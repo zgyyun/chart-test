@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ccc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ccc
+  template:
+    metadata:
+      labels:
+        app: ccc
+    spec:
+      containers:
+        - name: ccc
+          image: harbor.dev.cn/test-service/busybox:1.30.1
+          tty: true
+
+

@@ -1,20 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: busybox
+  name: testpod
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: busybox
+      app: testpod
   template:
     metadata:
       labels:
-        app: busybox
+        app: testpod
     spec:
       containers:
-        - name: busybox
+        - name: testpod
           image: harbor.dev.cn/test-service/busybox:1.30.1
+          tty: true
 
 
 
